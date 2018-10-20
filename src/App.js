@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 //import { Link } from 'react-router-dom';
 import './App.css';
 import './bootstrap.min.css';
-import CitiesAPIData from './Background';
+//import CitiesAPIData from './Background';
 
 class App extends PureComponent {
   state = {
@@ -16,8 +16,8 @@ class App extends PureComponent {
     this.fetchCities();
   }
 
-  fetchCities() {
-    fetch("http://localhost:52179/api/cities")
+  async fetchCities() {
+    await fetch("http://localhost:52179/api/cities")
       .then(response => response.json())
       .then(data => this.setState({ cities: data, isLoading: false }))
       .catch(error => this.setState({
@@ -30,6 +30,7 @@ class App extends PureComponent {
     return (
       <div className="App">
         <h1>City Info App</h1>
+        {error ? <p>{error.message}</p>: null}
         {!isLoading && (
           cities.map(city => {
             const { id, name, description } = city;
