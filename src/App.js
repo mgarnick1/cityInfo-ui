@@ -1,25 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { PureComponent } from 'react';
+//import PropTypes from 'prop-types';
+//import { Link } from 'react-router-dom';
 import './App.css';
+import './bootstrap.min.css';
+import CitiesAPIData from './Background';
 
-class App extends Component {
+class App extends PureComponent {
+  state = {
+    cities: [],
+    isLoading: false,
+    error: null
+  }
+
+  componentDidMount() {
+    this.fetchCities();
+  }
+
+  fetchCities() {
+    fetch("http://localhost:52179/api/cities")
+      .then(response => response.json())
+      .then(data => this.setState({ cities: data, isLoading: false }))
+      .catch(error => this.setState({
+        error, isLoading: false
+      }));
+    }
+
   render() {
+    const { cities, isLoading, error } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>City Info App</h1>
+        {!isLoading && (
+          cities.map(city => {
+            const { id, name, description } = city;
+            return (
+              <div key={id}>
+                <p>Name: {name}</p>
+                <p>Description: {description}</p>
+              </div>
+            );
+          })
+        )}
+
       </div>
     );
   }
