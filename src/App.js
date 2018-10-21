@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 //import PropTypes from 'prop-types';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
 import './bootstrap.min.css';
 //import CitiesAPIData from './Background';
@@ -23,21 +23,25 @@ class App extends PureComponent {
       .catch(error => this.setState({
         error, isLoading: false
       }));
-    }
+  }
 
   render() {
     const { cities, isLoading, error } = this.state;
     return (
-      <div className="App">
-        <h1>City Info App</h1>
-        {error ? <p>{error.message}</p>: null}
+      <div className="App container=fluid">
+        <h1 className="header">City Info App</h1>
+        {error ? <p>{error.message}</p> : null}
         {!isLoading && (
           cities.map(city => {
             const { id, name, description } = city;
             return (
-              <div key={id}>
-                <p>Name: {name}</p>
-                <p>Description: {description}</p>
+              <div className="offset-1 space" key={id}>
+                <h2 className="wrapper">{name}</h2>
+                <p>{description}</p>
+                <button type="button" className="btn btn-primary offset-1">
+                  <Link style={{ color: '#fff' }} to="/PointsOfInterest">Points Of Interest</Link>
+                </button>
+                <hr />
               </div>
             );
           })

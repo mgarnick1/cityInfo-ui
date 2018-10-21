@@ -1,34 +1,79 @@
 import React, { Component, Fragment, PureComponent } from 'react';
 import './bootstrap.min.css';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //import axios from 'axios';
 
-class CitiesAPIData extends PureComponent {
-  
-  
+class PointsOfInterest extends PureComponent {
+  state = {
+    pointsOfInterest: [],
+    isLoading: false,
+    error: null
+  }
+
+  componentDidMount() {
+    this.fetchPOI1();
+    this.fetchPOI2();
+    this.fetchPOI3();
+
+  }
+
+  async fetchPOI1() {
+    await fetch("http://localhost:52179/api/cities/1/pointsofinterest/")
+      .then(response => response.json())
+      .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
+      .catch(error => this.setState({
+        error, isLoading: false
+      }));
+  }
+
+  async fetchPOI2() {
+    await fetch("http://localhost:52179/api/cities/2/pointsofinterest/")
+      .then(response => response.json())
+      .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
+      .catch(error => this.setState({
+        error, isLoading: false
+      }));
+  }
+
+  async fetchPOI3() {
+    await fetch("http://localhost:52179/api/cities/3/pointsofinterest/")
+      .then(response => response.json())
+      .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
+      .catch(error => this.setState({
+        error, isLoading: false
+      }));
+  }
+
+
 
 
   render() {
-    const { names, descriptions, isLoading } = this.state;
+    const { pointsOfInterest, isLoading, error } = this.state;
     return (
-      <Fragment>
-        <h1>City Info</h1>
-        {!isLoading ? (
-          names.map(city => {
-            const { names, descriptions } = city;
+      <div className="App container=fluid">
+        <h1 className="header">Points Of Interest (POI)</h1>
+        {error ? <p>{error.message}</p> : null}
+        {!isLoading && (
+          pointsOfInterest.map(poi => {
+            const { id, name, description } = poi;
             return (
-              <div key={names}>
-                <p>City: {names}</p>
-                <p>Points Of Interest: {descriptions}</p>
-                <hr />
+              <div className="offset-1 space" key={id}>
+                <div>
+                  <h2 className="wrapper">{name}</h2>
+                  <p>{description}</p>
+                  <button type="button" className="btn btn-primary offset-1">
+                    <Link style={{ color: '#fff' }} to="/AddPOI">Add POI</Link>
+                  </button>
+                  <hr />
+                </div>
               </div>
             );
           })
-        ) : (
-            <h3> Loading ... </h3>
-          )}
-      </Fragment>
+        )}
+      </div>
     );
   }
 }
 
-export default CitiesAPIData;
+export default withRouter(PointsOfInterest);
