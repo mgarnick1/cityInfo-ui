@@ -12,13 +12,11 @@ class PointsOfInterest extends PureComponent {
   }
 
   componentDidMount() {
-    this.fetchPOI1();
-    this.fetchPOI2();
-    this.fetchPOI3();
+    this.fetchPOI();
 
   }
 
-  async fetchPOI1() {
+  async fetchPOI() {
     await fetch("http://localhost:52179/api/cities/1/pointsofinterest/")
       .then(response => response.json())
       .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
@@ -27,23 +25,6 @@ class PointsOfInterest extends PureComponent {
       }));
   }
 
-  async fetchPOI2() {
-    await fetch("http://localhost:52179/api/cities/2/pointsofinterest/")
-      .then(response => response.json())
-      .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
-      .catch(error => this.setState({
-        error, isLoading: false
-      }));
-  }
-
-  async fetchPOI3() {
-    await fetch("http://localhost:52179/api/cities/3/pointsofinterest/")
-      .then(response => response.json())
-      .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
-      .catch(error => this.setState({
-        error, isLoading: false
-      }));
-  }
 
 
 
