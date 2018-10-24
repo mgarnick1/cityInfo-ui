@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 
-class AddPOINY extends PureComponent {
+class AddPOIAntwerp extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,21 +30,21 @@ class AddPOINY extends PureComponent {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'http://localhost:52179/api/cities/1/pointsofinterest/',
+      url: 'http://localhost:52179/api/cities/2/pointsofinterest/',
       data: {
         name: this.state.name,
         description: this.state.description
       }
-    });  
+    });
   }
 
 
   render() {
     return (
       <div className="App container=fluid">
-        <h1 className="header">Add Points Of Interest (POI) New York</h1>
+        <h1 className="header">Add Points Of Interest (POI) Antwerp</h1>
         <form onSubmit={this.handleSubmit}>
-          
+
           <div className="AddPOIForm_input">
             <label htmlFor="name">POI Name</label>
             <input type="text" name="name" value={this.state.name} onChange={this.onFieldChange} />
@@ -58,9 +58,9 @@ class AddPOINY extends PureComponent {
             <Link style={{ color: '#393939' }} to="/">Home</Link>
           </button>
         </form>
-        
+
       </div>
     );
   }
 };
-export default withRouter(AddPOINY);
+export default withRouter(AddPOIAntwerp);

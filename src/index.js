@@ -4,15 +4,23 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import PointsOfInterest from './Background';
-import AddPOI from './AddPOI';
+import PointsOfInterestNY from './Background';
+import PointsOfInterestAntwerp from './PointsOfInterestAntwerp';
+import PointsOfInterestParis from './PointsOfInterestParis';
+import AddPOINY from './AddPOI';
+import AddPOIAntwerp from './AddPOIAntwerp';
+import AddPOIParis from './AddPOIParis';
 
 ReactDOM.render(
   <BrowserRouter>
     <Fragment>
       <Route exact path="/" component={App} />
-      <Route path="/PointsOfInterest" component={PointsOfInterest} />
-      <Route path="/AddPOI" component={AddPOI} />
+      <Route path="/PointsOfInterestsNY" component={PointsOfInterestNY} />
+      <Route path="/PointsOfInterestsAntwerp" component={PointsOfInterestAntwerp} />
+      <Route path="/PointsOfInterestsParis" component={PointsOfInterestParis} />
+      <Route path="/AddPOINY" component={AddPOINY} />
+      <Route path="/AddPOIAntwerp" component={AddPOIAntwerp} />
+      <Route path="/AddPOIParis" component={AddPOIParis} />
     </Fragment>
   </BrowserRouter>, document.getElementById('root'));
 

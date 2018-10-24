@@ -22,6 +22,15 @@
 	margin: 25px;
 }
 
+.center {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	margin-right: 200px;
+	
+}
+
 
 
 .AddPOIForm_input {
@@ -29,9 +38,14 @@
 	align-content: center;
 	justify-content: center;
 	margin-left: 40%;
-	
 }
 
-.AddPOIForm_input > label {
-	display: block;
+	.AddPOIForm_input > label {
+		display: block;
+	}
+
+.submit-btn {
+	
+	justify-content: space-around;
+	margin-left: 50px;
 }

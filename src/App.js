@@ -30,6 +30,17 @@ class App extends PureComponent {
     return (
       <div className="App container=fluid">
         <h1 className="header">City Info App</h1>
+        <h2 className="center offset-1">
+        <button type="button" className="btn btn-primary offset-1">
+          <Link style={{ color: '#fff' }} to="/PointsOfInterestsNY">Points Of Interest New York</Link>
+        </button>
+        <button type="button" className="btn btn-primary offset-1">
+          <Link style={{ color: '#fff' }} to="/PointsOfInterestsAntwerp">Points Of Interest Antwerp</Link>
+        </button>
+        <button type="button" className="btn btn-primary offset-1">
+          <Link style={{ color: '#fff' }} to="/PointsOfInterestsParis">Points Of Interest Paris</Link>
+          </button>
+        </h2>
         {error ? <p>{error.message}</p> : null}
         {!isLoading && (
           cities.map(city => {
@@ -38,9 +49,6 @@ class App extends PureComponent {
               <div className="offset-1 space" key={id}>
                 <h2 className="wrapper">{name}</h2>
                 <p>{description}</p>
-                <button type="button" className="btn btn-primary offset-1">
-                  <Link style={{ color: '#fff' }} to="/PointsOfInterest">Points Of Interest</Link>
-                </button>
                 <hr />
               </div>
             );

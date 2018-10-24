@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 //import axios from 'axios';
 
-class PointsOfInterestNY extends PureComponent {
+class PointsOfInterestAntwerp extends PureComponent {
   state = {
     pointsOfInterest: [],
     isLoading: false,
@@ -17,7 +17,7 @@ class PointsOfInterestNY extends PureComponent {
   }
 
   async fetchPOI() {
-    await fetch("http://localhost:52179/api/cities/1/pointsofinterest/")
+    await fetch("http://localhost:52179/api/cities/2/pointsofinterest/")
       .then(response => response.json())
       .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
       .catch(error => this.setState({
@@ -44,7 +44,7 @@ class PointsOfInterestNY extends PureComponent {
                   <h2 className="wrapper">{name}</h2>
                   <p>{description}</p>
                   <button type="button" className="btn btn-primary offset-1">
-                    <Link style={{ color: '#fff' }} to="/AddPOINY">Add POI</Link>
+                    <Link style={{ color: '#fff' }} to="/AddPOIAntwerp">Add POI</Link>
                   </button>
                   <hr />
                 </div>
@@ -57,4 +57,4 @@ class PointsOfInterestNY extends PureComponent {
   }
 }
 
-export default withRouter(PointsOfInterestNY);
+export default withRouter(PointsOfInterestAntwerp);
