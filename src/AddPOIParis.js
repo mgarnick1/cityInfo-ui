@@ -36,6 +36,7 @@ class AddPOIParis extends PureComponent {
         description: this.state.description
       }
     });
+    alert("The Point Of Interest was successfully added, please add another point of interest or return to the previous page.");
   }
 
 
@@ -58,7 +59,6 @@ class AddPOIParis extends PureComponent {
             <Link style={{ color: '#393939' }} to="/">Home</Link>
           </button>
         </form>
-
       </div>
     );
   }

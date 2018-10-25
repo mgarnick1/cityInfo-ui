@@ -49,3 +49,8 @@
 	justify-content: space-around;
 	margin-left: 50px;
 }
+
+.formatId {
+	margin-top: 20px;
+	font-size: 10px;
+}

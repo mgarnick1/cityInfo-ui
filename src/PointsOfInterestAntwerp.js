@@ -33,7 +33,11 @@ class PointsOfInterestAntwerp extends PureComponent {
     const { pointsOfInterest, isLoading, error } = this.state;
     return (
       <div className="App container=fluid">
-        <h1 className="header">Points Of Interest (POI)</h1>
+        <h1 className="header">Points Of Interest (POI) Antwerp</h1>
+        <button type="button" className="btn btn-primary offset-1">
+          <Link style={{ color: '#fff' }} to="/DeletePOIAntwerp">Delete POI</Link>
+        </button>
+        <hr />
         {error ? <p>{error.message}</p> : null}
         {!isLoading && (
           pointsOfInterest.map(poi => {
@@ -41,6 +45,7 @@ class PointsOfInterestAntwerp extends PureComponent {
             return (
               <div className="offset-1 space" key={id}>
                 <div>
+                  <p className="formatId">id: {id}</p>
                   <h2 className="wrapper">{name}</h2>
                   <p>{description}</p>
                   <button type="button" className="btn btn-primary offset-1">

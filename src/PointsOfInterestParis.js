@@ -34,6 +34,10 @@ class PointsOfInterestParis extends PureComponent {
     return (
       <div className="App container=fluid">
         <h1 className="header">Points Of Interest (POI)</h1>
+        <button type="button" className="btn btn-primary offset-1">
+          <Link style={{ color: '#fff' }} to="/DeletePOIParis">Delete POI</Link>
+        </button>
+        <hr />
         {error ? <p>{error.message}</p> : null}
         {!isLoading && (
           pointsOfInterest.map(poi => {
@@ -41,7 +45,8 @@ class PointsOfInterestParis extends PureComponent {
             return (
               <div className="offset-1 space" key={id}>
                 <div>
-                  <h2 className="wrapper">{name}</h2>
+                  <p className="formatId">id: {id}</p>
+                  <h2 className="wrapper">{name} </h2>
                   <p>{description}</p>
                   <button type="button" className="btn btn-primary offset-1">
                     <Link style={{ color: '#fff' }} to="/AddPOIParis">Add POI</Link>

@@ -10,6 +10,9 @@ import PointsOfInterestParis from './PointsOfInterestParis';
 import AddPOINY from './AddPOI';
 import AddPOIAntwerp from './AddPOIAntwerp';
 import AddPOIParis from './AddPOIParis';
+import DeletePOIParis from './DeletePOIParis';
+import DeletePOIAntwerp from './DeletePOIAntwerp';
+import DeletePOINY from './DeletePOINY';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -21,6 +24,9 @@ ReactDOM.render(
       <Route path="/AddPOINY" component={AddPOINY} />
       <Route path="/AddPOIAntwerp" component={AddPOIAntwerp} />
       <Route path="/AddPOIParis" component={AddPOIParis} />
+      <Route path="/DeletePOIParis" component={DeletePOIParis} />
+      <Route path="/DeletePOIAntwerp" component={DeletePOIAntwerp} />
+      <Route path="/DeletePOINY" component={DeletePOINY} />
     </Fragment>
   </BrowserRouter>, document.getElementById('root'));
 
