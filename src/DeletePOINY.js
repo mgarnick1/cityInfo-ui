@@ -7,7 +7,23 @@ import axios from 'axios';
 
 class DeletePOINY extends PureComponent {
   state = {
-    id: ''
+    id: '', 
+    pointsOfInterest: [],
+    isLoading: false,
+    error: null
+  }
+
+  componentDidMount() {
+    this.fetchPOI();
+  }
+
+  async fetchPOI() {
+    await fetch("http://localhost:52179/api/cities/1/pointsofinterest/")
+      .then(response => response.json())
+      .then(data => this.setState({ pointsOfInterest: data, isLoading: false }))
+      .catch(error => this.setState({
+        error, isLoading: false
+      }));
   }
 
   handleChange = event => {
@@ -25,6 +41,7 @@ class DeletePOINY extends PureComponent {
   }
 
   render() {
+    const { pointsOfInterest, isLoading, error } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -34,6 +51,19 @@ class DeletePOINY extends PureComponent {
           </label>
           <button type="submit">Delete</button>
         </form>
+        {error ? <p>{error.message}</p> : null}
+        {!isLoading && (
+          pointsOfInterest.map(poi => {
+            const { id, name, description } = poi;
+            return (
+              <div className="offset-1 space" key={id}>
+                <div>
+                  <p>id: {id}, {name}: {description}</p>
+                </div>
+              </div>
+            );
+          }
+          ))}
       </div>
     );
   }
