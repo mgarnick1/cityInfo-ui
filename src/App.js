@@ -1,19 +1,38 @@
 import React, { PureComponent } from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './App.css';
 import './bootstrap.min.css';
-//import CitiesAPIData from './Background';
+import { STATUS, Loading, Avatar, Container, Header } from "gitstar-components";
+
+const CLIENT_ID = process.env.CLIENT_ID;
+const REDIRECT_URI = "http://localhost:3000/";
 
 class App extends PureComponent {
   state = {
     cities: [],
     isLoading: false,
-    error: null
+    error: null,
+    status: STATUS.INITIAL,
+    token: null
   }
 
   componentDidMount() {
     this.fetchCities();
+    const code =
+      window.location.href.match(code) &&
+      window.location.href.match(code)[1];
+    if (code) {
+      this.setState({ status: STATUS.LOADING });
+      fetch(`https://city-info-api.herokuapp.com/authenticate/${code}`)
+        .then(response => response.json())
+        .then(({ token }) => {
+          this.setState({
+            token,
+            status: STATUS.FINISHED_LOADING
+          });
+        });
+    }
   }
 
   async fetchCities() {
@@ -25,20 +44,43 @@ class App extends PureComponent {
       }));
   }
 
+
   render() {
     const { cities, isLoading, error } = this.state;
     return (
       <div className="App container=fluid">
+        <Container>
+          <Header>
+            <div style={{ display: "flex", alignItems: "center" }}>
+            </div>
+            <Avatar
+                style={{
+                  transform: `scale(${this.state.status === STATUS.AUTHENTICATED ? "1" : "0"})`
+              }}
+            />
+            <a style={{ display: this.state.status === STATUS.INITIAL ? "inline" : "none" }}
+              href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
+            >
+              Signin or Login
+          </a>
+          </Header>
+          <Loading status={this.state.status} callback={() => {
+            if (this.prop.status !== STATUS.AUTHENTICATED) {
+              this.setState({ status: STATUS.AUTHENTICATED });
+            }
+          }}
+          />
+        </Container>
         <h1 className="header">City Info App</h1>
         <h2 className="center offset-1">
-        <button type="button" className="btn btn-primary offset-1">
-          <Link style={{ color: '#fff' }} to="/PointsOfInterestsNY">Points Of Interest New York</Link>
-        </button>
-        <button type="button" className="btn btn-primary offset-1">
-          <Link style={{ color: '#fff' }} to="/PointsOfInterestsAntwerp">Points Of Interest Antwerp</Link>
-        </button>
-        <button type="button" className="btn btn-primary offset-1">
-          <Link style={{ color: '#fff' }} to="/PointsOfInterestsParis">Points Of Interest Paris</Link>
+          <button type="button" className="btn btn-primary offset-1">
+            <Link style={{ color: '#fff' }} to="/PointsOfInterestsNY">Points Of Interest New York</Link>
+          </button>
+          <button type="button" className="btn btn-primary offset-1">
+            <Link style={{ color: '#fff' }} to="/PointsOfInterestsAntwerp">Points Of Interest Antwerp</Link>
+          </button>
+          <button type="button" className="btn btn-primary offset-1">
+            <Link style={{ color: '#fff' }} to="/PointsOfInterestsParis">Points Of Interest Paris</Link>
           </button>
         </h2>
         {error ? <p>{error.message}</p> : null}

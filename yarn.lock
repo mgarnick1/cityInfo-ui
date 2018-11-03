@@ -2653,6 +2653,10 @@ dotenv@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.0.0.tgz#24e37c041741c5f4b25324958ebbc34bca965935"
 
+dotenv@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.1.0.tgz#9853b6ca98292acb7dec67a95018fa40bccff42c"
+
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npmjs.org/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -3310,6 +3314,14 @@ follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   dependencies:
     debug "=3.1.0"
 
+font-awesome@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+
+fontawesome@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/fontawesome/-/fontawesome-4.7.2.tgz#7f0c72ac7a6b029d3375bacb23522d9acfc50a52"
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -3447,6 +3459,15 @@ getpass@^0.1.1:
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
   dependencies:
     assert-plus "^1.0.0"
+
+gitstar-components@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/gitstar-components/-/gitstar-components-1.0.5.tgz#a1cc3f801cf45f995bd40115e3fdc37c81abaa01"
+  dependencies:
+    lottie-web "^5.1.8"
+    primer "^10.3.0"
+    react "^16.2.0"
+    react-dom "^16.2.0"
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -5005,6 +5026,10 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.1.8:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.4.1.tgz#98465741d4907293656cab31e395d79d0546ef26"
+
 lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
@@ -6499,6 +6524,256 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
+primer-alerts@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/primer-alerts/-/primer-alerts-1.5.10.tgz#89dbca72f59b0455178d4a9b3016f2f88d7fd7ed"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-avatars@1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/primer-avatars/-/primer-avatars-1.5.7.tgz#575d2c99b610edcebc4394fd5d98a6a59aa1474c"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-base@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/primer-base/-/primer-base-1.8.0.tgz#27cd1d95de19aad045165281f7055b6545235a2d"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-blankslate@1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/primer-blankslate/-/primer-blankslate-1.4.10.tgz#70156cdeadbaf716019a2fc10941f8aff790ea8a"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-box@2.5.10:
+  version "2.5.10"
+  resolved "https://registry.yarnpkg.com/primer-box/-/primer-box-2.5.10.tgz#a9eb96ea432480b196b6427e4db67c10bc67b0ae"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-branch-name@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/primer-branch-name/-/primer-branch-name-1.0.8.tgz#8b0acf30fd7e43493cdb55dd419c7c157e9980f9"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-breadcrumb@1.5.6:
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/primer-breadcrumb/-/primer-breadcrumb-1.5.6.tgz#fb31d368e7697cdc7312341d9eea6d6e5a6b9e0e"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-buttons@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/primer-buttons/-/primer-buttons-2.6.1.tgz#264a4449c9174a49f426b3b84ed3d12d3a5630f3"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-core@6.10.4:
+  version "6.10.4"
+  resolved "https://registry.yarnpkg.com/primer-core/-/primer-core-6.10.4.tgz#fe808b9be79ee474a256af0b2d6123d7d736c97d"
+  dependencies:
+    primer-base "1.8.0"
+    primer-box "2.5.10"
+    primer-breadcrumb "1.5.6"
+    primer-buttons "2.6.1"
+    primer-forms "2.1.5"
+    primer-layout "1.5.0"
+    primer-navigation "1.5.8"
+    primer-pagination "1.0.4"
+    primer-support "4.6.1"
+    primer-table-object "1.4.10"
+    primer-tooltips "1.5.8"
+    primer-truncate "1.4.10"
+    primer-utilities "4.13.0"
+
+primer-forms@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/primer-forms/-/primer-forms-2.1.5.tgz#6aab7acf20fb50274513e321050d2c85cc569f44"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-labels@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/primer-labels/-/primer-labels-1.5.10.tgz#e5b62116b49597e76b8a0507cb81432f2d79ffc7"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-layout@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/primer-layout/-/primer-layout-1.5.0.tgz#aaac46e3f0553b5c0b59d7575fe887449399607d"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-markdown@3.7.10:
+  version "3.7.10"
+  resolved "https://registry.yarnpkg.com/primer-markdown/-/primer-markdown-3.7.10.tgz#1f2525ece1e37f211df7ddda514198f3d5822a92"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-marketing-buttons@1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/primer-marketing-buttons/-/primer-marketing-buttons-1.0.10.tgz#76069ce573ea55b4feb0e5c6e37d7893168a1bb7"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-marketing-support@1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/primer-marketing-support/-/primer-marketing-support-1.5.3.tgz#ebce70c7299bd780d243e47cfa2385ccf3189d4d"
+
+primer-marketing-type@1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/primer-marketing-type/-/primer-marketing-type-1.4.10.tgz#61a3b20fc674cf55dbdd8039f98e67ac0402ef97"
+  dependencies:
+    primer-marketing-support "1.5.3"
+    primer-support "4.6.1"
+
+primer-marketing-utilities@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/primer-marketing-utilities/-/primer-marketing-utilities-1.7.0.tgz#c73263729248e1ccd8acae2c5c50101a1cd83e4c"
+  dependencies:
+    primer-marketing-support "1.5.3"
+    primer-support "4.6.1"
+
+primer-marketing@6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/primer-marketing/-/primer-marketing-6.3.0.tgz#2e8d9bf75f7b5de895d2a148e9b280a33850af3e"
+  dependencies:
+    primer-marketing-buttons "1.0.10"
+    primer-marketing-support "1.5.3"
+    primer-marketing-type "1.4.10"
+    primer-marketing-utilities "1.7.0"
+    primer-page-headers "1.5.0"
+    primer-page-sections "1.5.0"
+    primer-support "4.6.1"
+    primer-tables "1.5.0"
+
+primer-navigation@1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/primer-navigation/-/primer-navigation-1.5.8.tgz#857b0846f13cb23141a788c58b135dabfb55c358"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-page-headers@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/primer-page-headers/-/primer-page-headers-1.5.0.tgz#2eb9c7c36cec9543ca9ca63708b7b528907f1617"
+  dependencies:
+    primer-marketing-support "1.5.3"
+    primer-support "4.6.1"
+
+primer-page-sections@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/primer-page-sections/-/primer-page-sections-1.5.0.tgz#7bdf8dc64a84b881f1a6a3ee5fbb919f0ea1813a"
+  dependencies:
+    primer-marketing-support "1.5.3"
+    primer-support "4.6.1"
+
+primer-pagination@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/primer-pagination/-/primer-pagination-1.0.4.tgz#873014709bd58b03bf25076f0bf2785feb74bec7"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-popover@0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/primer-popover/-/primer-popover-0.1.5.tgz#400475d11d7222acadf5aa354189d73fd82e7eab"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-product@5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/primer-product/-/primer-product-5.7.0.tgz#2354430331f8cad37446b5d2d72b5d0529c35075"
+  dependencies:
+    primer-alerts "1.5.10"
+    primer-avatars "1.5.7"
+    primer-blankslate "1.4.10"
+    primer-branch-name "1.0.8"
+    primer-labels "1.5.10"
+    primer-markdown "3.7.10"
+    primer-popover "0.1.5"
+    primer-subhead "1.0.8"
+    primer-support "4.6.1"
+
+primer-subhead@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/primer-subhead/-/primer-subhead-1.0.8.tgz#20afb6351e6e03ac6b75eb3aa6ab832b0ef42aa8"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-support@4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/primer-support/-/primer-support-4.6.1.tgz#60f2fe176238abf0c410db193f8cfa9c8f3f1b81"
+
+primer-table-object@1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/primer-table-object/-/primer-table-object-1.4.10.tgz#de732b8e6fde843ad93c9c2203eb5bd7896fc6e9"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-tables@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/primer-tables/-/primer-tables-1.5.0.tgz#39b5913852f9afadfa5210ddd7d68f7fb1e6e4dc"
+  dependencies:
+    primer-marketing-support "1.5.3"
+    primer-support "4.6.1"
+
+primer-tooltips@1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/primer-tooltips/-/primer-tooltips-1.5.8.tgz#a6afffbdfe48bdbbdc71c29cb93f59678d025b9c"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-truncate@1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/primer-truncate/-/primer-truncate-1.4.10.tgz#e2c64ac6fef7716a45a1c0a35b88e3301f718b34"
+  dependencies:
+    primer-support "4.6.1"
+
+primer-utilities@4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/primer-utilities/-/primer-utilities-4.13.0.tgz#7ce7ff7933f59be39c667c800eff9d3fdae46370"
+  dependencies:
+    primer-support "4.6.1"
+
+primer@^10.3.0:
+  version "10.9.0"
+  resolved "https://registry.yarnpkg.com/primer/-/primer-10.9.0.tgz#beb8aa1c95a31dfce8ddad3f156ec63901e58eba"
+  dependencies:
+    primer-alerts "1.5.10"
+    primer-avatars "1.5.7"
+    primer-base "1.8.0"
+    primer-blankslate "1.4.10"
+    primer-box "2.5.10"
+    primer-branch-name "1.0.8"
+    primer-breadcrumb "1.5.6"
+    primer-buttons "2.6.1"
+    primer-core "6.10.4"
+    primer-forms "2.1.5"
+    primer-labels "1.5.10"
+    primer-layout "1.5.0"
+    primer-markdown "3.7.10"
+    primer-marketing "6.3.0"
+    primer-marketing-buttons "1.0.10"
+    primer-marketing-support "1.5.3"
+    primer-marketing-type "1.4.10"
+    primer-marketing-utilities "1.7.0"
+    primer-navigation "1.5.8"
+    primer-page-headers "1.5.0"
+    primer-page-sections "1.5.0"
+    primer-pagination "1.0.4"
+    primer-popover "0.1.5"
+    primer-product "5.7.0"
+    primer-subhead "1.0.8"
+    primer-support "4.6.1"
+    primer-table-object "1.4.10"
+    primer-tables "1.5.0"
+    primer-tooltips "1.5.8"
+    primer-truncate "1.4.10"
+    primer-utilities "4.13.0"
+
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -6607,7 +6882,7 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
-qs@6.5.2, qs@~6.5.2:
+qs@6.5.2, qs@^6.5.1, qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
@@ -6709,6 +6984,15 @@ react-dev-utils@^6.0.5:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
+react-dom@^16.2.0:
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.0.tgz#6375b8391e019a632a89a0988bce85f0cc87a92f"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.10.0"
+
 react-dom@^16.5.2:
   version "16.5.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.5.2.tgz#b69ee47aa20bab5327b2b9d7c1fe2a30f2cfa9d7"
@@ -6721,6 +7005,12 @@ react-dom@^16.5.2:
 react-error-overlay@^5.0.5:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.0.5.tgz#716ff1a92fda76bb89a39adf9ce046a5d740e71a"
+
+react-oauth-flow@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-oauth-flow/-/react-oauth-flow-1.2.0.tgz#ebeeefba54733650a569c7e021cb4b862fc4c7f9"
+  dependencies:
+    qs "^6.5.1"
 
 react-router-dom@^4.3.1:
   version "4.3.1"
@@ -6797,6 +7087,15 @@ react-scripts@2.0.5:
     workbox-webpack-plugin "3.6.2"
   optionalDependencies:
     fsevents "1.2.4"
+
+react@^16.2.0:
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.6.0.tgz#b34761cfaf3e30f5508bc732fb4736730b7da246"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.10.0"
 
 react@^16.5.2:
   version "16.5.2"
@@ -7206,6 +7505,13 @@ schedule@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.5.0.tgz#c128fffa0b402488b08b55ae74bb9df55cc29cc8"
   dependencies:
+    object-assign "^4.1.1"
+
+scheduler@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.10.0.tgz#7988de90fe7edccc774ea175a783e69c40c521e1"
+  dependencies:
+    loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
 schema-utils@^0.4.4, schema-utils@^0.4.5:
