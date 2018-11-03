@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import './bootstrap.min.css';
 import { STATUS, Loading, Avatar, Container, Header } from "gitstar-components";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const REDIRECT_URI = "http://localhost:3000/";
