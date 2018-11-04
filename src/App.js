@@ -41,6 +41,7 @@ class App extends PureComponent {
             token,
             status: STATUS.FINISHED_LOADING
           });
+          console.log({token})
         });
     }
   }
