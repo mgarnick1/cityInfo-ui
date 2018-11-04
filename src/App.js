@@ -12,6 +12,9 @@ const REDIRECT_URI = "http://localhost:3000/";
 
 
 class App extends PureComponent {
+  static propTypes = {
+    isLoggedIn: PropTypes.bool
+  }
   state = {
     cities: [],
     isLoading: false,
@@ -20,11 +23,15 @@ class App extends PureComponent {
     token: null
   }
 
+
+
+  
+
   componentDidMount() {
+    const { isLoggedIn } = this.props;
     this.fetchCities();
-    const code =
-      window.location.href.match(code) &&
-      window.location.href.match(code)[1];
+    const code = window.location.href.match(/\?code=(.*)/) && window.location.href.match(/\?code=(.*)/)[1];
+    console.log(code);
     if (code) {
       this.setState({ status: STATUS.LOADING });
       fetch(`https://city-info-api.herokuapp.com/authenticate/${code}`)
@@ -50,8 +57,7 @@ class App extends PureComponent {
 
 
   render() {
-    const { cities, isLoading, error, status } = this.state;
-    console.log(CLIENT_ID)
+    const { cities, isLoading, error, token } = this.state;
     return (
       <div className="App container=fluid">
         <Container>
@@ -66,11 +72,11 @@ class App extends PureComponent {
             <a style={{ display: this.state.status === STATUS.INITIAL ? "inline" : "none" }}
                 href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
             >
-              {CLIENT_ID ? 'Welcome' : 'Login'}
+            Login
           </a>
           </Header>
           <Loading status={this.state.status} callback={() => {
-            if (this.prop.status !== STATUS.AUTHENTICATED) {
+            if (this.state.status !== STATUS.AUTHENTICATED) {
               this.setState({ status: STATUS.AUTHENTICATED });
             }
           }}
