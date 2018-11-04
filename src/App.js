@@ -6,10 +6,10 @@ import './bootstrap.min.css';
 import { STATUS, Loading, Avatar, Container, Header } from "gitstar-components";
 import dotenv from 'dotenv';
 
-dotenv.config();
 
-const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const REDIRECT_URI = "http://localhost:3000/";
+
 
 class App extends PureComponent {
   state = {
@@ -38,6 +38,7 @@ class App extends PureComponent {
     }
   }
 
+
   async fetchCities() {
     await fetch("http://localhost:52179/api/cities")
       .then(response => response.json())
@@ -49,7 +50,8 @@ class App extends PureComponent {
 
 
   render() {
-    const { cities, isLoading, error } = this.state;
+    const { cities, isLoading, error, status } = this.state;
+    console.log(CLIENT_ID)
     return (
       <div className="App container=fluid">
         <Container>
@@ -62,9 +64,9 @@ class App extends PureComponent {
               }}
             />
             <a style={{ display: this.state.status === STATUS.INITIAL ? "inline" : "none" }}
-              href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
+                href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
             >
-              Signin or Login
+              {CLIENT_ID ? 'Welcome' : 'Login'}
           </a>
           </Header>
           <Loading status={this.state.status} callback={() => {

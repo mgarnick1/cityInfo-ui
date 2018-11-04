@@ -14,6 +14,7 @@ import DeletePOIParis from './DeletePOIParis';
 import DeletePOIAntwerp from './DeletePOIAntwerp';
 import DeletePOINY from './DeletePOINY';
 
+
 ReactDOM.render(
   <BrowserRouter>
     <Fragment>
