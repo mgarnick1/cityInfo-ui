@@ -13,12 +13,14 @@ import AddPOIParis from './AddPOIParis';
 import DeletePOIParis from './DeletePOIParis';
 import DeletePOIAntwerp from './DeletePOIAntwerp';
 import DeletePOINY from './DeletePOINY';
+import LoginPage from './Login';
 
 
 ReactDOM.render(
   <BrowserRouter>
     <Fragment>
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={LoginPage} />
+      <Route path ="/Home" component={App} />
       <Route path="/PointsOfInterestsNY" component={PointsOfInterestNY} />
       <Route path="/PointsOfInterestsAntwerp" component={PointsOfInterestAntwerp} />
       <Route path="/PointsOfInterestsParis" component={PointsOfInterestParis} />

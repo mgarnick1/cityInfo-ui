@@ -13,6 +13,15 @@
 	color: white;
 }
 
+.signout {
+	background-color: #282c34;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 50px;
+	color: white;
+	font-size: 14px;
+}
+
 .space {
 	justify-content: space-between;
 }
@@ -53,4 +62,27 @@
 .formatId {
 	margin-top: 20px;
 	font-size: 10px;
+}
+
+.login {
+	margin-top: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form_element {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.GitHub-Login {
+	display: flex;
+	margin-top: 50px;
+	align-content: center;
+	justify-content: center;
+	margin-left: 680px;
 }
