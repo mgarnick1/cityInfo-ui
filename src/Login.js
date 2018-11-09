@@ -7,13 +7,13 @@ import "./App.css";
 import "./bootstrap.min.css";
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const REDIRECT_URI = "http://localhost:52179/signin";
+const REDIRECT_URI = "http://localhost:3000/Home";
 
 class LoginPage extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      sessionToken: null,
+      authorize_token: '',
       error: null,
       username: "",
       password: ""
@@ -22,19 +22,31 @@ class LoginPage extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleOauth = this.handleOauth.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     axios({
       method: "post",
-      url: "http://localhost:52179/api/cities/signin",
+      url: `http://localhost:52179/api/cities/signin`,
       data: {
         username: this.state.username,
         password: this.state.password
       }
     });
   }
+
+  handleOauth() {
+      const { authorize_token } = this.state;
+    axios({
+        method: 'post',
+        url: `http://localhost:52179/api/cities/signin/`,
+        data: {
+          authorize_token: authorize_token
+        }
+      });
+    }
 
   handleUsernameChange(e) {
     this.setState({ username: e.target.value });
@@ -45,10 +57,10 @@ class LoginPage extends PureComponent {
   }
 
   render() {
-    if (this.state.sessionToken) {
-      this.props.auth.redirect({ sessionToken: this.state.sessionToken });
-      return null;
-    }
+    // if (this.state.sessionToken) {
+    //   this.props.auth.redirect({ sessionToken: this.state.sessionToken });
+    //   return null;
+    // }
 
     const errorMessage = this.state.error ? (
       <span className="error-message">{this.state.error}</span>
@@ -81,10 +93,11 @@ class LoginPage extends PureComponent {
             <input id="submit" type="submit" value="Submit" />
           </div>
         </form>
-        <button className="btn btn-submit GitHub-Login">
+        <button className="btn btn-submit GitHub-Login" onClick={this.handleOauth}>
           <a
             href={`https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user&redirect_uri=${REDIRECT_URI}`}
           >
+          
             Login with GitHub
           </a>
           <img src={require("./assets/GitHub-Mark.png")} />

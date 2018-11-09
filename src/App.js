@@ -17,18 +17,18 @@ class App extends PureComponent {
 
   componentDidMount() {
     this.fetchCities();
-    const code =
-      window.location.href.match(/\?code=(.*)/) &&
-      window.location.href.match(/\?code=(.*)/)[1];
-    if (code) {
-      fetch(`http://localhost:52179/api/cities/signin/${code}`)
-        .then(response => response.json())
-        .then(({ token }) => {
-          this.setState({
-            token
-          });
-        });
-    }
+    // const code =
+    //   window.location.href.match(/\?code=(.*)/) &&
+    //   window.location.href.match(/\?code=(.*)/)[1];
+    // if (code) {
+    //   fetch(`http://localhost:52179/api/cities/signin/${code}`)
+    //     .then(response => response.json())
+    //     .then(({ token }) => {
+    //       this.setState({
+    //         token
+    //       });
+    //     });
+    // }
   }
 
   async fetchCities() {
